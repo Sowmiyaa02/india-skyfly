@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import heroGlobe from "@/assets/hero-globe.jpg";
+import skyflyLogo from "@/assets/skyfly-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -414,13 +415,13 @@ function Index() {
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
           <a href="#" className="group flex items-center gap-3">
             <div
-              className="grid size-10 place-items-center rounded-xl font-bold transition-transform group-hover:scale-110"
+              className="relative grid size-11 place-items-center rounded-2xl p-1.5 transition-transform group-hover:scale-110"
               style={{
-                background: "var(--gradient-aurora)",
-                boxShadow: "var(--shadow-glow-electric)",
+                background: "color-mix(in oklab, var(--gold) 15%, transparent)",
+                boxShadow: "0 0 28px color-mix(in oklab, var(--gold) 55%, transparent)",
               }}
             >
-              S
+              <img src={skyflyLogo.url} alt="SkyFly International logo" className="size-full object-contain" />
             </div>
             <span className="font-display text-xl font-bold tracking-tight">
               SKYFLY<span style={{ color: "var(--neon-cyan)" }}>INTL</span>
@@ -849,11 +850,8 @@ function Index() {
       <footer className="relative z-20 border-t border-white/5 px-6 py-16">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 md:flex-row">
           <div className="flex items-center gap-3">
-            <div
-              className="grid size-9 place-items-center rounded-lg font-bold"
-              style={{ background: "var(--gradient-aurora)" }}
-            >
-              S
+            <div className="grid size-9 place-items-center rounded-lg p-1">
+              <img src={skyflyLogo.url} alt="SkyFly logo" className="size-full object-contain" />
             </div>
             <span className="text-sm font-semibold tracking-widest uppercase">
               SkyFly International
