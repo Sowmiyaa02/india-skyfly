@@ -415,13 +415,13 @@ function Index() {
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
           <a href="#" className="group flex items-center gap-3">
             <div
-              className="grid size-10 place-items-center rounded-xl font-bold transition-transform group-hover:scale-110"
+              className="relative grid size-11 place-items-center rounded-2xl p-1.5 transition-transform group-hover:scale-110"
               style={{
-                background: "var(--gradient-aurora)",
-                boxShadow: "var(--shadow-glow-electric)",
+                background: "color-mix(in oklab, var(--gold) 15%, transparent)",
+                boxShadow: "0 0 28px color-mix(in oklab, var(--gold) 55%, transparent)",
               }}
             >
-              S
+              <img src={skyflyLogo.url} alt="SkyFly International logo" className="size-full object-contain" />
             </div>
             <span className="font-display text-xl font-bold tracking-tight">
               SKYFLY<span style={{ color: "var(--neon-cyan)" }}>INTL</span>
