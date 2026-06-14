@@ -850,11 +850,8 @@ function Index() {
       <footer className="relative z-20 border-t border-white/5 px-6 py-16">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 md:flex-row">
           <div className="flex items-center gap-3">
-            <div
-              className="grid size-9 place-items-center rounded-lg font-bold"
-              style={{ background: "var(--gradient-aurora)" }}
-            >
-              S
+            <div className="grid size-9 place-items-center rounded-lg p-1">
+              <img src={skyflyLogo.url} alt="SkyFly logo" className="size-full object-contain" />
             </div>
             <span className="text-sm font-semibold tracking-widest uppercase">
               SkyFly International
