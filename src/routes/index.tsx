@@ -449,32 +449,9 @@ function Places() {
         </div>
       </Reveal>
 
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 [perspective:1200px]">
         {PLACES.map((p, i) => (
-          <Reveal key={p.name} delay={i * 60}>
-            <button
-              onClick={() => setOpen(i)}
-              className="group relative h-80 w-full overflow-hidden rounded-2xl border border-white/10 text-left shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl"
-            >
-              <img
-                src={p.img}
-                alt={p.name}
-                width={800}
-                height={1024}
-                loading="lazy"
-                className="size-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-              <div className="absolute top-3 left-3 rounded-full bg-white/15 px-2 py-1 text-[10px] tracking-widest text-white backdrop-blur">
-                ★ {p.rating}
-              </div>
-              <div className="absolute right-3 bottom-3 left-3 text-white">
-                <div className="text-[11px] uppercase tracking-widest text-white/70">{p.city}</div>
-                <div className="mt-1 font-display text-xl">{p.name}</div>
-                <div className="mt-1 text-[11px] text-white/60">{p.era}</div>
-              </div>
-            </button>
-          </Reveal>
+          <PlaceCard key={p.name} place={p} index={i} onOpen={() => setOpen(i)} />
         ))}
       </div>
 
@@ -483,34 +460,203 @@ function Places() {
   );
 }
 
+function PlaceCard({
+  place,
+  index,
+  onOpen,
+}: {
+  place: (typeof PLACES)[number];
+  index: number;
+  onOpen: () => void;
+}) {
+  const ref = useRef<HTMLButtonElement>(null);
+  const [shown, setShown] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([e]) => e.isIntersecting && setShown(true),
+      { threshold: 0.2 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  const onMove = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const el = ref.current;
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5;
+    const y = (e.clientY - r.top) / r.height - 0.5;
+    el.style.transform = `perspective(1000px) rotateX(${-y * 10}deg) rotateY(${x * 12}deg) translateY(-6px) scale(1.02)`;
+    const img = el.querySelector<HTMLImageElement>("[data-img]");
+    if (img) img.style.transform = `translate(${-x * 14}px, ${-y * 14}px) scale(1.15)`;
+    const glow = el.querySelector<HTMLDivElement>("[data-glow]");
+    if (glow) {
+      glow.style.background = `radial-gradient(400px circle at ${e.clientX - r.left}px ${e.clientY - r.top}px, color-mix(in oklab, var(--neon-cyan) 35%, transparent), transparent 60%)`;
+      glow.style.opacity = "1";
+    }
+  };
+
+  const onLeave = () => {
+    const el = ref.current;
+    if (!el) return;
+    el.style.transform = "";
+    const img = el.querySelector<HTMLImageElement>("[data-img]");
+    if (img) img.style.transform = "";
+    const glow = el.querySelector<HTMLDivElement>("[data-glow]");
+    if (glow) glow.style.opacity = "0";
+  };
+
+  return (
+    <button
+      ref={ref}
+      onClick={onOpen}
+      onMouseMove={onMove}
+      onMouseLeave={onLeave}
+      style={{
+        animationDelay: `${index * 90}ms`,
+        transition: "transform 0.45s cubic-bezier(0.16,1,0.3,1), box-shadow 0.45s ease",
+        transformStyle: "preserve-3d",
+        willChange: "transform",
+      }}
+      className={`group relative h-80 w-full overflow-hidden rounded-2xl border border-white/10 text-left shadow-xl hover:shadow-[0_30px_80px_-20px_oklch(0_0_0/0.7),0_0_60px_-10px_color-mix(in_oklab,var(--neon-cyan)_40%,transparent)] ${
+        shown ? "animate-card-rise" : "opacity-0"
+      }`}
+    >
+      <div className="absolute inset-0 overflow-hidden rounded-2xl">
+        <img
+          data-img
+          src={place.img}
+          alt={place.name}
+          width={800}
+          height={1024}
+          loading="lazy"
+          className="size-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+          style={{ willChange: "transform" }}
+        />
+      </div>
+
+      {/* gradient + cursor glow + shine */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+      <div data-glow className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 mix-blend-screen" />
+      <div className="card-shine" />
+
+      {/* rating badge */}
+      <div
+        className="absolute top-3 left-3 rounded-full bg-white/15 px-2.5 py-1 text-[10px] tracking-widest text-white backdrop-blur opacity-0 group-hover:animate-badge-pop"
+        style={{ animationDelay: "0.1s", animation: shown ? "badge-pop 0.7s cubic-bezier(0.34,1.56,0.64,1) 0.4s both" : "none" }}
+      >
+        ★ {place.rating}
+      </div>
+
+      {/* tap hint pill */}
+      <div className="absolute top-3 right-3 translate-y-[-8px] rounded-full border border-white/20 bg-black/40 px-2 py-1 text-[9px] uppercase tracking-widest text-white/80 opacity-0 backdrop-blur transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+        Read history →
+      </div>
+
+      {/* content */}
+      <div className="absolute right-4 bottom-4 left-4 text-white" style={{ transform: "translateZ(40px)" }}>
+        <div className="overflow-hidden text-[11px] uppercase tracking-widest text-white/70">
+          <div className="transition-transform duration-500 group-hover:-translate-y-0.5">{place.city}</div>
+        </div>
+        <div className="mt-1 overflow-hidden font-display text-xl">
+          <div className="transition-transform duration-500 group-hover:-translate-y-0.5">{place.name}</div>
+        </div>
+        <div className="mt-1 text-[11px] text-white/60">{place.era}</div>
+        <div className="mt-3 h-px w-0 bg-gradient-to-r from-[var(--gold)] to-transparent transition-all duration-500 group-hover:w-full" />
+      </div>
+    </button>
+  );
+}
+
 function PlaceModal({ place, onClose }: { place: (typeof PLACES)[number]; onClose: () => void }) {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
     document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
   }, [onClose]);
   return (
-    <div className="fixed inset-0 z-[80] grid place-items-center bg-black/70 p-4 backdrop-blur-md" onClick={onClose}>
+    <div
+      className="animate-backdrop-in fixed inset-0 z-[80] grid place-items-center bg-black/70 p-4 backdrop-blur-md"
+      onClick={onClose}
+    >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="grid max-h-[88vh] w-full max-w-4xl grid-cols-1 overflow-hidden rounded-3xl border border-white/15 bg-[oklch(0.15_0.05_260)] shadow-2xl md:grid-cols-2"
+        className="animate-modal-in relative grid max-h-[88vh] w-full max-w-4xl grid-cols-1 overflow-hidden rounded-3xl border border-white/15 bg-[oklch(0.15_0.05_260)] shadow-2xl md:grid-cols-2"
+        style={{
+          boxShadow:
+            "0 40px 100px -20px oklch(0 0 0 / 0.8), 0 0 80px -10px color-mix(in oklab, var(--neon-cyan) 30%, transparent)",
+        }}
       >
-        <img src={place.img} alt={place.name} className="h-64 w-full object-cover md:h-full" />
+        {/* image with ken burns + shine */}
+        <div className="relative h-64 overflow-hidden md:h-full">
+          <img
+            src={place.img}
+            alt={place.name}
+            className="animate-ken-burns size-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent md:bg-gradient-to-r" />
+          <div
+            className="pointer-events-none absolute inset-0 opacity-60"
+            style={{
+              background:
+                "linear-gradient(115deg, transparent 40%, rgba(255,255,255,0.15) 50%, transparent 60%)",
+              animation: "shine-sweep 3s ease-in-out 0.6s",
+            }}
+          />
+          <div
+            className="absolute bottom-4 left-4 rounded-full bg-white/15 px-3 py-1 text-[10px] tracking-widest text-white backdrop-blur"
+            style={{ animation: "badge-pop 0.7s cubic-bezier(0.34,1.56,0.64,1) 0.5s both" }}
+          >
+            ★ {place.rating}
+          </div>
+        </div>
+
         <div className="overflow-y-auto p-7 text-white">
-          <div className="text-[10px] uppercase tracking-[0.3em] text-[var(--neon-cyan)]">{place.city}</div>
-          <h3 className="mt-2 font-display text-3xl">{place.name}</h3>
-          <div className="mt-1 text-xs text-white/60">{place.era} · ★ {place.rating}</div>
+          <div
+            className="text-[10px] uppercase tracking-[0.3em] text-[var(--neon-cyan)]"
+            style={{ animation: "fade-up 0.6s cubic-bezier(0.16,1,0.3,1) 0.15s both" }}
+          >
+            {place.city}
+          </div>
+          <h3
+            className="mt-2 font-display text-3xl"
+            style={{ animation: "title-slide 0.8s cubic-bezier(0.65,0,0.35,1) 0.25s both" }}
+          >
+            {place.name}
+          </h3>
+          <div
+            className="mt-1 text-xs text-white/60"
+            style={{ animation: "fade-up 0.6s cubic-bezier(0.16,1,0.3,1) 0.35s both" }}
+          >
+            {place.era} · ★ {place.rating}
+          </div>
 
-          <p className="mt-5 text-sm leading-relaxed text-white/85">{place.history}</p>
+          <p
+            className="mt-5 text-sm leading-relaxed text-white/85"
+            style={{ animation: "fade-up 0.7s cubic-bezier(0.16,1,0.3,1) 0.45s both" }}
+          >
+            {place.history}
+          </p>
 
-          <div className="mt-6 grid grid-cols-1 gap-3 text-sm sm:grid-cols-2">
+          <div
+            className="mt-6 grid grid-cols-1 gap-3 text-sm sm:grid-cols-2"
+            style={{ animation: "fade-up 0.7s cubic-bezier(0.16,1,0.3,1) 0.6s both" }}
+          >
             <InfoBlock label="Best season">{place.best}</InfoBlock>
             <InfoBlock label="Insider tip">{place.tip}</InfoBlock>
           </div>
 
           <button
             onClick={onClose}
-            className="mt-7 rounded-full border border-white/20 bg-white/10 px-5 py-2 text-xs backdrop-blur hover:bg-white/20"
+            className="mt-7 rounded-full border border-white/20 bg-white/10 px-5 py-2 text-xs backdrop-blur transition-all hover:scale-105 hover:bg-white/20 hover:shadow-[0_0_20px_color-mix(in_oklab,var(--neon-cyan)_60%,transparent)]"
+            style={{ animation: "fade-up 0.6s cubic-bezier(0.16,1,0.3,1) 0.75s both" }}
           >
             Close
           </button>
