@@ -294,13 +294,13 @@ const JOURNEY = [
 ];
 
 const SAMPLE_ITINERARY = [
-  { day: "Day 1", city: "Delhi", plan: "Arrival, airport pickup, hotel check-in, Lotus Temple at sunset." },
-  { day: "Day 2", city: "Delhi", plan: "Red Fort, Jama Masjid, Chandni Chowk rickshaw ride, Humayun's Tomb." },
-  { day: "Day 3", city: "Agra", plan: "Train to Agra, Taj Mahal sunrise next morning, Agra Fort." },
-  { day: "Day 4", city: "Jaipur", plan: "Drive to Jaipur via Fatehpur Sikri, evening at City Palace." },
-  { day: "Day 5", city: "Jaipur", plan: "Amber Fort, Hawa Mahal, Jantar Mantar, Rajasthani thali dinner." },
-  { day: "Day 6", city: "Varanasi", plan: "Flight to Varanasi, evening Ganga Aarti ceremony." },
-  { day: "Day 7", city: "Varanasi → Home", plan: "Sunrise boat ride, Sarnath visit, airport drop for return." },
+  { day: "Day 1", city: "Delhi", plan: "Arrival & airport pickup, hotel check-in and room allotment, welcome refreshments, gentle evening walk to settle in after the long flight." },
+  { day: "Day 2", city: "Delhi", plan: "Light breakfast at hotel, one heritage walk (Red Fort or Humayun's Tomb), traditional thali lunch, free rest in the afternoon, optional Chandni Chowk rickshaw ride." },
+  { day: "Day 3", city: "Agra", plan: "Comfortable train transfer, hotel check-in near the Taj, evening at Mehtab Bagh for a sunset view across the river — meals at vetted local restaurants." },
+  { day: "Day 4", city: "Jaipur", plan: "Scenic drive with stops, hotel arrival, restful lunch, brief orientation walk near the Pink City bazaar — no rushed sightseeing on transfer days." },
+  { day: "Day 5", city: "Jaipur", plan: "One major fort visit (Amber Fort), Rajasthani lunch break, optional Hawa Mahal photo stop, free spa or shopping evening." },
+  { day: "Day 6", city: "Varanasi", plan: "Domestic flight, hotel rest, evening Ganga Aarti by boat — light dinner and early sleep." },
+  { day: "Day 7", city: "Varanasi → Home", plan: "Sunrise boat ride along the ghats, breakfast, hotel checkout and airport drop — all transfers tracked end to end." },
 ];
 
 const FAQS = [
