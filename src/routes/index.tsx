@@ -406,7 +406,22 @@ function Hero() {
                 <span className="size-1.5 rounded-full bg-[var(--gold)] animate-pulse" />
                 Tourist visa · guidance · sightseeing — fully arranged
               </p>
-              <h1 className="font-display text-6xl leading-[0.95] text-white md:text-8xl lg:text-[10rem]">
+              <div className="flex items-baseline gap-3 mb-1">
+                <span
+                  className="font-display text-2xl md:text-3xl text-white/90 animate-fade-up"
+                  style={{ animationDelay: "0.1s" }}
+                >
+                  Welcome to
+                </span>
+                <span className="animate-welcome-wave text-3xl md:text-4xl" aria-hidden>🙏</span>
+              </div>
+              <h1
+                className="font-display text-6xl leading-[0.95] md:text-8xl lg:text-[10rem] animate-gradient-pan bg-clip-text text-transparent"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(90deg, #ffffff, var(--gold), var(--sunset), var(--neon-cyan), #ffffff)",
+                }}
+              >
                 India
               </h1>
               <p className="mt-6 max-w-xl text-base text-white/80 md:text-lg">
