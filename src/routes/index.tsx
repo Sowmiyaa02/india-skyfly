@@ -8,6 +8,12 @@ import placeKerala from "@/assets/place-kerala.jpg";
 import placeVaranasi from "@/assets/place-varanasi.jpg";
 import placeMysore from "@/assets/place-mysore.jpg";
 import placeLadakh from "@/assets/place-ladakh.jpg";
+import placeMeenakshi from "@/assets/place-meenakshi.jpg";
+import placeGateway from "@/assets/place-gateway.jpg";
+import placeKhajuraho from "@/assets/place-khajuraho.jpg";
+import placeRann from "@/assets/place-rann.jpg";
+import placeHampi from "@/assets/place-hampi.jpg";
+import placeDarjeeling from "@/assets/place-darjeeling.jpg";
 import skyflyLogo from "@/assets/skyfly-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
