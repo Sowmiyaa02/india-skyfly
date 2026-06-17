@@ -515,7 +515,7 @@ function Places() {
           <div>
             <span className="text-xs uppercase tracking-[0.3em] text-[var(--neon-cyan)]">Popular destinations</span>
             <h2 className="mt-2 font-display text-4xl md:text-5xl">
-              <span className="gradient-aurora-text">8 places</span> every visitor remembers
+              <span className="gradient-aurora-text">{PLACES.length} places</span> every visitor remembers
             </h2>
           </div>
           <p className="max-w-md text-sm text-white/70">
