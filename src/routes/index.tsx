@@ -757,11 +757,19 @@ function InfoBlock({ label, children }: { label: string; children: React.ReactNo
 function Journey() {
   return (
     <section id="guide" className="relative mx-auto max-w-7xl px-6 py-24 md:px-12">
+      {/* animated decor */}
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div
+          className="absolute -top-32 left-1/2 size-[600px] -translate-x-1/2 rounded-full opacity-20 blur-3xl animate-mesh"
+          style={{ background: "var(--gradient-aurora)" }}
+        />
+      </div>
+
       <Reveal>
         <div className="mb-14 text-center">
           <span className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]">From landing to leaving</span>
           <h2 className="mt-2 font-display text-4xl md:text-5xl">
-            Full <span className="gradient-aurora-text">visitor guidance</span>
+            Full <span className="gradient-aurora-text animate-gradient-pan bg-clip-text">visitor guidance</span>
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm text-white/70">
             Eight carefully timed touch-points so you never feel lost in a new country.
@@ -769,26 +777,54 @@ function Journey() {
         </div>
       </Reveal>
 
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-        {JOURNEY.map((j, i) => (
-          <Reveal key={j.n} delay={i * 60}>
-            <div className="glass-panel group flex gap-5 rounded-2xl p-6 transition-all hover:-translate-y-1">
+      {/* vertical animated spine */}
+      <div className="relative">
+        <div
+          className="pointer-events-none absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 md:block"
+          style={{
+            background:
+              "linear-gradient(to bottom, transparent, color-mix(in oklab, var(--neon-cyan) 60%, transparent), color-mix(in oklab, var(--sunset) 60%, transparent), transparent)",
+          }}
+        />
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+          {JOURNEY.map((j, i) => (
+            <Reveal key={j.n} delay={i * 80}>
               <div
-                className="grid size-14 shrink-0 place-items-center rounded-xl font-display text-lg"
-                style={{
-                  background: "var(--gradient-aurora)",
-                  boxShadow: "var(--shadow-glow-electric)",
-                }}
+                className="glass-panel group relative flex gap-5 overflow-hidden rounded-2xl p-6 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02]"
+                style={{ animationDelay: `${i * 0.2}s` }}
               >
-                {j.n}
+                {/* rotating gradient border on hover */}
+                <div className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{
+                  background:
+                    "conic-gradient(from 0deg, var(--electric), var(--violet), var(--sunset), var(--neon-cyan), var(--electric))",
+                  WebkitMask: "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
+                  WebkitMaskComposite: "xor",
+                  maskComposite: "exclude",
+                  padding: "1px",
+                }} />
+                {/* sweep */}
+                <div className="card-shine" />
+
+                <div
+                  className="grid size-14 shrink-0 place-items-center rounded-xl font-display text-lg animate-journey-glow transition-transform duration-500 group-hover:rotate-[-8deg] group-hover:scale-110"
+                  style={{
+                    background: "var(--gradient-aurora)",
+                    boxShadow: "var(--shadow-glow-electric)",
+                  }}
+                >
+                  {j.n}
+                </div>
+                <div className="relative">
+                  <h3 className="font-display text-lg text-white transition-transform duration-500 group-hover:translate-x-1">
+                    {j.title}
+                  </h3>
+                  <p className="mt-1 text-sm leading-relaxed text-white/70">{j.body}</p>
+                  <div className="mt-3 h-px w-0 bg-gradient-to-r from-[var(--gold)] via-[var(--sunset)] to-transparent transition-all duration-700 group-hover:w-full" />
+                </div>
               </div>
-              <div>
-                <h3 className="font-display text-lg text-white">{j.title}</h3>
-                <p className="mt-1 text-sm leading-relaxed text-white/70">{j.body}</p>
-              </div>
-            </div>
-          </Reveal>
-        ))}
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );
