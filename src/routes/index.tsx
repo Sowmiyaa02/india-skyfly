@@ -8,6 +8,12 @@ import placeKerala from "@/assets/place-kerala.jpg";
 import placeVaranasi from "@/assets/place-varanasi.jpg";
 import placeMysore from "@/assets/place-mysore.jpg";
 import placeLadakh from "@/assets/place-ladakh.jpg";
+import placeMeenakshi from "@/assets/place-meenakshi.jpg";
+import placeGateway from "@/assets/place-gateway.jpg";
+import placeKhajuraho from "@/assets/place-khajuraho.jpg";
+import placeRann from "@/assets/place-rann.jpg";
+import placeHampi from "@/assets/place-hampi.jpg";
+import placeDarjeeling from "@/assets/place-darjeeling.jpg";
 import skyflyLogo from "@/assets/skyfly-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -171,13 +177,68 @@ const PLACES = [
   {
     name: "Meenakshi Temple",
     city: "Madurai, Tamil Nadu",
-    img: placeTaj,
+    img: placeMeenakshi,
     era: "Original shrine 6th century BCE",
     rating: "4.8",
     history:
       "A vast Dravidian temple complex dedicated to Goddess Meenakshi and Lord Sundareswarar. Its 14 gopurams (towers) rise up to 52 m, each covered with thousands of vividly painted sculptures depicting Hindu mythology. The hall of a thousand pillars is an acoustic marvel from the 16th century.",
     best: "October – March",
     tip: "Visit during the evening procession when the deity is carried in a palanquin.",
+  },
+  {
+    name: "Gateway of India",
+    city: "Mumbai, Maharashtra",
+    img: placeGateway,
+    era: "1924 CE",
+    rating: "4.6",
+    history:
+      "A 26-metre basalt arch on the Mumbai harbour built to commemorate the 1911 landing of King George V. Ironically it was also the spot from which the last British troops departed India in 1948. Today it is the city's most photographed monument and the gateway to Elephanta Caves.",
+    best: "November – February",
+    tip: "Take the 1-hour ferry to Elephanta Caves in the morning before crowds arrive.",
+  },
+  {
+    name: "Khajuraho Temples",
+    city: "Madhya Pradesh",
+    img: placeKhajuraho,
+    era: "950 – 1050 CE",
+    rating: "4.7",
+    history:
+      "A group of 25 surviving Hindu and Jain temples built by the Chandela dynasty, famed for their nagara-style shikhara towers and exquisite sculpture. UNESCO listed for their architectural symmetry and the storytelling carved into every square metre of sandstone.",
+    best: "October – February",
+    tip: "Stay for the evening sound-and-light show inside the Western Group.",
+  },
+  {
+    name: "Rann of Kutch",
+    city: "Gujarat",
+    img: placeRann,
+    era: "Geological — salt marsh",
+    rating: "4.8",
+    history:
+      "One of the largest salt deserts on Earth, transforming into a glowing white plain after the monsoon dries. The Rann Utsav (Nov–Feb) brings handicraft tents, folk music and full-moon camel rides under a star-bright Gujarati sky.",
+    best: "November – February",
+    tip: "Plan your visit around a full-moon weekend for the most surreal landscape.",
+  },
+  {
+    name: "Hampi Ruins",
+    city: "Karnataka",
+    img: placeHampi,
+    era: "14th – 16th century CE",
+    rating: "4.8",
+    history:
+      "The royal capital of the Vijayanagara Empire — once one of the richest cities in the medieval world. Spread across boulder-strewn hills are over 1,600 surviving monuments: temples, palaces, market streets and stepped tanks, all designated a UNESCO site.",
+    best: "October – February",
+    tip: "Rent a cycle or scooter — the ruins are spread across 36 km².",
+  },
+  {
+    name: "Darjeeling Hills",
+    city: "West Bengal",
+    img: placeDarjeeling,
+    era: "Hill station since 1835",
+    rating: "4.7",
+    history:
+      "Perched at 2,050 m with views of Kanchenjunga (the world's third-highest peak), Darjeeling is famous for its tea estates, the UNESCO-listed toy train, and Buddhist monasteries that mark its border with Sikkim and Bhutan.",
+    best: "March – May, October – November",
+    tip: "Wake before dawn for the Tiger Hill sunrise — Kanchenjunga turns gold first.",
   },
 ];
 
@@ -233,13 +294,13 @@ const JOURNEY = [
 ];
 
 const SAMPLE_ITINERARY = [
-  { day: "Day 1", city: "Delhi", plan: "Arrival, airport pickup, hotel check-in, Lotus Temple at sunset." },
-  { day: "Day 2", city: "Delhi", plan: "Red Fort, Jama Masjid, Chandni Chowk rickshaw ride, Humayun's Tomb." },
-  { day: "Day 3", city: "Agra", plan: "Train to Agra, Taj Mahal sunrise next morning, Agra Fort." },
-  { day: "Day 4", city: "Jaipur", plan: "Drive to Jaipur via Fatehpur Sikri, evening at City Palace." },
-  { day: "Day 5", city: "Jaipur", plan: "Amber Fort, Hawa Mahal, Jantar Mantar, Rajasthani thali dinner." },
-  { day: "Day 6", city: "Varanasi", plan: "Flight to Varanasi, evening Ganga Aarti ceremony." },
-  { day: "Day 7", city: "Varanasi → Home", plan: "Sunrise boat ride, Sarnath visit, airport drop for return." },
+  { day: "Day 1", city: "Delhi", plan: "Arrival & airport pickup, hotel check-in and room allotment, welcome refreshments, gentle evening walk to settle in after the long flight." },
+  { day: "Day 2", city: "Delhi", plan: "Light breakfast at hotel, one heritage walk (Red Fort or Humayun's Tomb), traditional thali lunch, free rest in the afternoon, optional Chandni Chowk rickshaw ride." },
+  { day: "Day 3", city: "Agra", plan: "Comfortable train transfer, hotel check-in near the Taj, evening at Mehtab Bagh for a sunset view across the river — meals at vetted local restaurants." },
+  { day: "Day 4", city: "Jaipur", plan: "Scenic drive with stops, hotel arrival, restful lunch, brief orientation walk near the Pink City bazaar — no rushed sightseeing on transfer days." },
+  { day: "Day 5", city: "Jaipur", plan: "One major fort visit (Amber Fort), Rajasthani lunch break, optional Hawa Mahal photo stop, free spa or shopping evening." },
+  { day: "Day 6", city: "Varanasi", plan: "Domestic flight, hotel rest, evening Ganga Aarti by boat — light dinner and early sleep." },
+  { day: "Day 7", city: "Varanasi → Home", plan: "Sunrise boat ride along the ghats, breakfast, hotel checkout and airport drop — all transfers tracked end to end." },
 ];
 
 const FAQS = [
@@ -345,7 +406,22 @@ function Hero() {
                 <span className="size-1.5 rounded-full bg-[var(--gold)] animate-pulse" />
                 Tourist visa · guidance · sightseeing — fully arranged
               </p>
-              <h1 className="font-display text-6xl leading-[0.95] text-white md:text-8xl lg:text-[10rem]">
+              <div className="flex items-baseline gap-3 mb-1">
+                <span
+                  className="font-display text-2xl md:text-3xl text-white/90 animate-fade-up"
+                  style={{ animationDelay: "0.1s" }}
+                >
+                  Welcome to
+                </span>
+                <span className="animate-welcome-wave text-3xl md:text-4xl" aria-hidden>🙏</span>
+              </div>
+              <h1
+                className="font-display text-6xl leading-[0.95] md:text-8xl lg:text-[10rem] animate-gradient-pan bg-clip-text text-transparent"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(90deg, #ffffff, var(--gold), var(--sunset), var(--neon-cyan), #ffffff)",
+                }}
+              >
                 India
               </h1>
               <p className="mt-6 max-w-xl text-base text-white/80 md:text-lg">
@@ -439,7 +515,7 @@ function Places() {
           <div>
             <span className="text-xs uppercase tracking-[0.3em] text-[var(--neon-cyan)]">Popular destinations</span>
             <h2 className="mt-2 font-display text-4xl md:text-5xl">
-              <span className="gradient-aurora-text">8 places</span> every visitor remembers
+              <span className="gradient-aurora-text">{PLACES.length} places</span> every visitor remembers
             </h2>
           </div>
           <p className="max-w-md text-sm text-white/70">
@@ -681,11 +757,19 @@ function InfoBlock({ label, children }: { label: string; children: React.ReactNo
 function Journey() {
   return (
     <section id="guide" className="relative mx-auto max-w-7xl px-6 py-24 md:px-12">
+      {/* animated decor */}
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div
+          className="absolute -top-32 left-1/2 size-[600px] -translate-x-1/2 rounded-full opacity-20 blur-3xl animate-mesh"
+          style={{ background: "var(--gradient-aurora)" }}
+        />
+      </div>
+
       <Reveal>
         <div className="mb-14 text-center">
           <span className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]">From landing to leaving</span>
           <h2 className="mt-2 font-display text-4xl md:text-5xl">
-            Full <span className="gradient-aurora-text">visitor guidance</span>
+            Full <span className="gradient-aurora-text animate-gradient-pan bg-clip-text">visitor guidance</span>
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm text-white/70">
             Eight carefully timed touch-points so you never feel lost in a new country.
@@ -693,26 +777,54 @@ function Journey() {
         </div>
       </Reveal>
 
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-        {JOURNEY.map((j, i) => (
-          <Reveal key={j.n} delay={i * 60}>
-            <div className="glass-panel group flex gap-5 rounded-2xl p-6 transition-all hover:-translate-y-1">
+      {/* vertical animated spine */}
+      <div className="relative">
+        <div
+          className="pointer-events-none absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 md:block"
+          style={{
+            background:
+              "linear-gradient(to bottom, transparent, color-mix(in oklab, var(--neon-cyan) 60%, transparent), color-mix(in oklab, var(--sunset) 60%, transparent), transparent)",
+          }}
+        />
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+          {JOURNEY.map((j, i) => (
+            <Reveal key={j.n} delay={i * 80}>
               <div
-                className="grid size-14 shrink-0 place-items-center rounded-xl font-display text-lg"
-                style={{
-                  background: "var(--gradient-aurora)",
-                  boxShadow: "var(--shadow-glow-electric)",
-                }}
+                className="glass-panel group relative flex gap-5 overflow-hidden rounded-2xl p-6 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02]"
+                style={{ animationDelay: `${i * 0.2}s` }}
               >
-                {j.n}
+                {/* rotating gradient border on hover */}
+                <div className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{
+                  background:
+                    "conic-gradient(from 0deg, var(--electric), var(--violet), var(--sunset), var(--neon-cyan), var(--electric))",
+                  WebkitMask: "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
+                  WebkitMaskComposite: "xor",
+                  maskComposite: "exclude",
+                  padding: "1px",
+                }} />
+                {/* sweep */}
+                <div className="card-shine" />
+
+                <div
+                  className="grid size-14 shrink-0 place-items-center rounded-xl font-display text-lg animate-journey-glow transition-transform duration-500 group-hover:rotate-[-8deg] group-hover:scale-110"
+                  style={{
+                    background: "var(--gradient-aurora)",
+                    boxShadow: "var(--shadow-glow-electric)",
+                  }}
+                >
+                  {j.n}
+                </div>
+                <div className="relative">
+                  <h3 className="font-display text-lg text-white transition-transform duration-500 group-hover:translate-x-1">
+                    {j.title}
+                  </h3>
+                  <p className="mt-1 text-sm leading-relaxed text-white/70">{j.body}</p>
+                  <div className="mt-3 h-px w-0 bg-gradient-to-r from-[var(--gold)] via-[var(--sunset)] to-transparent transition-all duration-700 group-hover:w-full" />
+                </div>
               </div>
-              <div>
-                <h3 className="font-display text-lg text-white">{j.title}</h3>
-                <p className="mt-1 text-sm leading-relaxed text-white/70">{j.body}</p>
-              </div>
-            </div>
-          </Reveal>
-        ))}
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -726,13 +838,15 @@ function Itinerary() {
     <section id="itinerary" className="relative mx-auto max-w-7xl px-6 py-24 md:px-12">
       <Reveal>
         <div className="mb-12">
-          <span className="text-xs uppercase tracking-[0.3em] text-[var(--electric)]">Sample timetable</span>
+          <span className="text-xs uppercase tracking-[0.3em] text-[var(--electric)]">Example timetable</span>
           <h2 className="mt-2 font-display text-4xl md:text-5xl">
-            A 7-day <span className="gradient-aurora-text">golden triangle + east</span>
+            A sample <span className="gradient-aurora-text">7-day flow</span>
           </h2>
-          <p className="mt-3 max-w-xl text-sm text-white/70">
-            Every itinerary we build follows the same clean rhythm: arrive, rest, explore, rest, repeat.
-            Below is an example — your real plan is tailored to your interests, pace and travel dates.
+          <p className="mt-3 max-w-2xl text-sm text-white/70">
+            This is only a <strong className="text-white">reference plan</strong> — actual times,
+            hotels and stops change with your travel dates and pace. Each day includes airport or
+            station pickup, room allotment, one main visit, food at trusted restaurants and rest
+            time. <span className="text-[var(--gold)]">For exact timings and a customised plan, please contact us.</span>
           </p>
         </div>
       </Reveal>
@@ -742,21 +856,25 @@ function Itinerary() {
           <div className="grid grid-cols-12 border-b border-white/10 px-6 py-4 text-[10px] uppercase tracking-widest text-white/50">
             <div className="col-span-2">Day</div>
             <div className="col-span-3">City</div>
-            <div className="col-span-7">Plan</div>
+            <div className="col-span-7">Approximate plan</div>
           </div>
           {SAMPLE_ITINERARY.map((row, i) => (
             <div
               key={row.day}
-              className={`grid grid-cols-12 items-center px-6 py-5 text-sm text-white/85 transition-colors hover:bg-white/5 ${
+              className={`group grid grid-cols-12 items-center gap-2 px-6 py-5 text-sm text-white/85 transition-all hover:bg-white/5 hover:translate-x-1 ${
                 i !== SAMPLE_ITINERARY.length - 1 ? "border-b border-white/5" : ""
               }`}
+              style={{ animation: `fade-up 0.7s cubic-bezier(0.16,1,0.3,1) ${i * 0.08}s both` }}
             >
-              <div className="col-span-2 font-display text-base text-[var(--gold)]">{row.day}</div>
+              <div className="col-span-2 font-display text-base text-[var(--gold)] transition-transform group-hover:scale-110">{row.day}</div>
               <div className="col-span-3 text-white">{row.city}</div>
               <div className="col-span-7 text-white/75">{row.plan}</div>
             </div>
           ))}
         </div>
+        <p className="mt-4 text-center text-xs text-white/50">
+          * Sample only. Day-by-day plans, exact pickup times and hotel categories are confirmed after consultation.
+        </p>
       </Reveal>
     </section>
   );
@@ -767,27 +885,71 @@ function Itinerary() {
 /* ------------------------------------------------------------ */
 function Etiquette() {
   const items = [
-    { t: "Dress modestly at temples", d: "Cover shoulders and knees. Some shrines require removing leather items." },
-    { t: "Remove shoes inside", d: "Shoes come off before entering temples, mosques and most homes." },
-    { t: "Use your right hand", d: "Eating, giving and receiving is traditionally done with the right hand." },
-    { t: "Carry bottled water", d: "Stick to sealed bottles. Avoid tap water and uncovered ice." },
-    { t: "Bargain politely in markets", d: "Friendly negotiation is normal in bazaars — never in malls or fixed-price stores." },
-    { t: "Ask before photographing people", d: "Especially at religious ceremonies and in rural areas." },
+    { t: "Dress modestly at temples", d: "Cover shoulders and knees. Some shrines require removing leather items.", icon: "🛕", color: "var(--sunset)" },
+    { t: "Remove shoes inside", d: "Shoes come off before entering temples, mosques and most homes.", icon: "👣", color: "var(--gold)" },
+    { t: "Use your right hand", d: "Eating, giving and receiving is traditionally done with the right hand.", icon: "🤝", color: "var(--neon-cyan)" },
+    { t: "Carry bottled water", d: "Stick to sealed bottles. Avoid tap water and uncovered ice.", icon: "💧", color: "var(--electric)" },
+    { t: "Bargain politely in markets", d: "Friendly negotiation is normal in bazaars — never in malls or fixed-price stores.", icon: "🛍️", color: "var(--violet)" },
+    { t: "Ask before photographing people", d: "Especially at religious ceremonies and in rural areas.", icon: "📸", color: "var(--indigo-glow)" },
+    { t: "Greet with Namaste", d: "Press palms together at chest height — a respectful greeting everywhere in India.", icon: "🙏", color: "var(--gold)" },
+    { t: "Tipping is appreciated", d: "10% at restaurants, ₹50–100 for drivers and porters keeps service warm.", icon: "💰", color: "var(--sunset)" },
+    { t: "Sundays & festivals are busy", d: "Plan monument visits early — Indian families travel on weekends and holidays.", icon: "🎉", color: "var(--neon-cyan)" },
   ];
   return (
     <section className="relative mx-auto max-w-7xl px-6 py-24 md:px-12">
+      {/* floating decor */}
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute left-10 top-20 size-72 rounded-full opacity-20 blur-3xl animate-float" style={{ background: "var(--violet)" }} />
+        <div className="absolute right-10 bottom-10 size-72 rounded-full opacity-20 blur-3xl animate-float-slow" style={{ background: "var(--sunset)" }} />
+      </div>
+
       <Reveal>
-        <div className="mb-10">
+        <div className="mb-10 text-center">
           <span className="text-xs uppercase tracking-[0.3em] text-[var(--violet)]">Travel with respect</span>
-          <h2 className="mt-2 font-display text-4xl md:text-5xl">Cultural etiquette</h2>
+          <h2 className="mt-2 font-display text-4xl md:text-5xl">
+            Cultural <span className="gradient-aurora-text">etiquette</span>
+          </h2>
+          <p className="mx-auto mt-3 max-w-xl text-sm text-white/70">
+            Small gestures that earn big smiles across every state in India.
+          </p>
         </div>
       </Reveal>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 [perspective:1000px]">
         {items.map((it, i) => (
-          <Reveal key={it.t} delay={i * 50}>
-            <div className="glass-panel rounded-2xl p-5">
-              <div className="font-display text-base text-white">{it.t}</div>
-              <p className="mt-1 text-sm text-white/65">{it.d}</p>
+          <Reveal key={it.t} delay={i * 60}>
+            <div
+              className="glass-panel group relative overflow-hidden rounded-2xl p-6 transition-all duration-500 hover:-translate-y-2 hover:rotate-[0.5deg]"
+              style={{
+                animation: `tilt-in 0.9s cubic-bezier(0.16,1,0.3,1) ${i * 0.07}s both`,
+              }}
+            >
+              {/* radial color glow on hover */}
+              <div
+                className="pointer-events-none absolute -inset-1 opacity-0 transition-opacity duration-500 group-hover:opacity-100 blur-2xl"
+                style={{ background: `radial-gradient(circle at 30% 20%, ${it.color}, transparent 60%)` }}
+              />
+              <div className="card-shine" />
+              <div className="relative flex items-start gap-4">
+                <div
+                  className="grid size-12 shrink-0 place-items-center rounded-xl text-2xl transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110"
+                  style={{
+                    background: `color-mix(in oklab, ${it.color} 18%, transparent)`,
+                    boxShadow: `0 0 20px color-mix(in oklab, ${it.color} 40%, transparent)`,
+                  }}
+                >
+                  <span className="animate-float inline-block">{it.icon}</span>
+                </div>
+                <div>
+                  <div className="font-display text-base text-white transition-transform duration-500 group-hover:translate-x-0.5">
+                    {it.t}
+                  </div>
+                  <p className="mt-1 text-sm text-white/65">{it.d}</p>
+                </div>
+              </div>
+              <div
+                className="absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-700 group-hover:w-full"
+                style={{ background: `linear-gradient(90deg, ${it.color}, transparent)` }}
+              />
             </div>
           </Reveal>
         ))}
