@@ -177,13 +177,68 @@ const PLACES = [
   {
     name: "Meenakshi Temple",
     city: "Madurai, Tamil Nadu",
-    img: placeTaj,
+    img: placeMeenakshi,
     era: "Original shrine 6th century BCE",
     rating: "4.8",
     history:
       "A vast Dravidian temple complex dedicated to Goddess Meenakshi and Lord Sundareswarar. Its 14 gopurams (towers) rise up to 52 m, each covered with thousands of vividly painted sculptures depicting Hindu mythology. The hall of a thousand pillars is an acoustic marvel from the 16th century.",
     best: "October – March",
     tip: "Visit during the evening procession when the deity is carried in a palanquin.",
+  },
+  {
+    name: "Gateway of India",
+    city: "Mumbai, Maharashtra",
+    img: placeGateway,
+    era: "1924 CE",
+    rating: "4.6",
+    history:
+      "A 26-metre basalt arch on the Mumbai harbour built to commemorate the 1911 landing of King George V. Ironically it was also the spot from which the last British troops departed India in 1948. Today it is the city's most photographed monument and the gateway to Elephanta Caves.",
+    best: "November – February",
+    tip: "Take the 1-hour ferry to Elephanta Caves in the morning before crowds arrive.",
+  },
+  {
+    name: "Khajuraho Temples",
+    city: "Madhya Pradesh",
+    img: placeKhajuraho,
+    era: "950 – 1050 CE",
+    rating: "4.7",
+    history:
+      "A group of 25 surviving Hindu and Jain temples built by the Chandela dynasty, famed for their nagara-style shikhara towers and exquisite sculpture. UNESCO listed for their architectural symmetry and the storytelling carved into every square metre of sandstone.",
+    best: "October – February",
+    tip: "Stay for the evening sound-and-light show inside the Western Group.",
+  },
+  {
+    name: "Rann of Kutch",
+    city: "Gujarat",
+    img: placeRann,
+    era: "Geological — salt marsh",
+    rating: "4.8",
+    history:
+      "One of the largest salt deserts on Earth, transforming into a glowing white plain after the monsoon dries. The Rann Utsav (Nov–Feb) brings handicraft tents, folk music and full-moon camel rides under a star-bright Gujarati sky.",
+    best: "November – February",
+    tip: "Plan your visit around a full-moon weekend for the most surreal landscape.",
+  },
+  {
+    name: "Hampi Ruins",
+    city: "Karnataka",
+    img: placeHampi,
+    era: "14th – 16th century CE",
+    rating: "4.8",
+    history:
+      "The royal capital of the Vijayanagara Empire — once one of the richest cities in the medieval world. Spread across boulder-strewn hills are over 1,600 surviving monuments: temples, palaces, market streets and stepped tanks, all designated a UNESCO site.",
+    best: "October – February",
+    tip: "Rent a cycle or scooter — the ruins are spread across 36 km².",
+  },
+  {
+    name: "Darjeeling Hills",
+    city: "West Bengal",
+    img: placeDarjeeling,
+    era: "Hill station since 1835",
+    rating: "4.7",
+    history:
+      "Perched at 2,050 m with views of Kanchenjunga (the world's third-highest peak), Darjeeling is famous for its tea estates, the UNESCO-listed toy train, and Buddhist monasteries that mark its border with Sikkim and Bhutan.",
+    best: "March – May, October – November",
+    tip: "Wake before dawn for the Tiger Hill sunrise — Kanchenjunga turns gold first.",
   },
 ];
 
