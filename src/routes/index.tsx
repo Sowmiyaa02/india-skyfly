@@ -838,13 +838,15 @@ function Itinerary() {
     <section id="itinerary" className="relative mx-auto max-w-7xl px-6 py-24 md:px-12">
       <Reveal>
         <div className="mb-12">
-          <span className="text-xs uppercase tracking-[0.3em] text-[var(--electric)]">Sample timetable</span>
+          <span className="text-xs uppercase tracking-[0.3em] text-[var(--electric)]">Example timetable</span>
           <h2 className="mt-2 font-display text-4xl md:text-5xl">
-            A 7-day <span className="gradient-aurora-text">golden triangle + east</span>
+            A sample <span className="gradient-aurora-text">7-day flow</span>
           </h2>
-          <p className="mt-3 max-w-xl text-sm text-white/70">
-            Every itinerary we build follows the same clean rhythm: arrive, rest, explore, rest, repeat.
-            Below is an example — your real plan is tailored to your interests, pace and travel dates.
+          <p className="mt-3 max-w-2xl text-sm text-white/70">
+            This is only a <strong className="text-white">reference plan</strong> — actual times,
+            hotels and stops change with your travel dates and pace. Each day includes airport or
+            station pickup, room allotment, one main visit, food at trusted restaurants and rest
+            time. <span className="text-[var(--gold)]">For exact timings and a customised plan, please contact us.</span>
           </p>
         </div>
       </Reveal>
@@ -854,21 +856,25 @@ function Itinerary() {
           <div className="grid grid-cols-12 border-b border-white/10 px-6 py-4 text-[10px] uppercase tracking-widest text-white/50">
             <div className="col-span-2">Day</div>
             <div className="col-span-3">City</div>
-            <div className="col-span-7">Plan</div>
+            <div className="col-span-7">Approximate plan</div>
           </div>
           {SAMPLE_ITINERARY.map((row, i) => (
             <div
               key={row.day}
-              className={`grid grid-cols-12 items-center px-6 py-5 text-sm text-white/85 transition-colors hover:bg-white/5 ${
+              className={`group grid grid-cols-12 items-center gap-2 px-6 py-5 text-sm text-white/85 transition-all hover:bg-white/5 hover:translate-x-1 ${
                 i !== SAMPLE_ITINERARY.length - 1 ? "border-b border-white/5" : ""
               }`}
+              style={{ animation: `fade-up 0.7s cubic-bezier(0.16,1,0.3,1) ${i * 0.08}s both` }}
             >
-              <div className="col-span-2 font-display text-base text-[var(--gold)]">{row.day}</div>
+              <div className="col-span-2 font-display text-base text-[var(--gold)] transition-transform group-hover:scale-110">{row.day}</div>
               <div className="col-span-3 text-white">{row.city}</div>
               <div className="col-span-7 text-white/75">{row.plan}</div>
             </div>
           ))}
         </div>
+        <p className="mt-4 text-center text-xs text-white/50">
+          * Sample only. Day-by-day plans, exact pickup times and hotel categories are confirmed after consultation.
+        </p>
       </Reveal>
     </section>
   );
@@ -879,31 +885,78 @@ function Itinerary() {
 /* ------------------------------------------------------------ */
 function Etiquette() {
   const items = [
-    { t: "Dress modestly at temples", d: "Cover shoulders and knees. Some shrines require removing leather items." },
-    { t: "Remove shoes inside", d: "Shoes come off before entering temples, mosques and most homes." },
-    { t: "Use your right hand", d: "Eating, giving and receiving is traditionally done with the right hand." },
-    { t: "Carry bottled water", d: "Stick to sealed bottles. Avoid tap water and uncovered ice." },
-    { t: "Bargain politely in markets", d: "Friendly negotiation is normal in bazaars — never in malls or fixed-price stores." },
-    { t: "Ask before photographing people", d: "Especially at religious ceremonies and in rural areas." },
+    { t: "Dress modestly at temples", d: "Cover shoulders and knees. Some shrines require removing leather items.", icon: "🛕", color: "var(--sunset)" },
+    { t: "Remove shoes inside", d: "Shoes come off before entering temples, mosques and most homes.", icon: "👣", color: "var(--gold)" },
+    { t: "Use your right hand", d: "Eating, giving and receiving is traditionally done with the right hand.", icon: "🤝", color: "var(--neon-cyan)" },
+    { t: "Carry bottled water", d: "Stick to sealed bottles. Avoid tap water and uncovered ice.", icon: "💧", color: "var(--electric)" },
+    { t: "Bargain politely in markets", d: "Friendly negotiation is normal in bazaars — never in malls or fixed-price stores.", icon: "🛍️", color: "var(--violet)" },
+    { t: "Ask before photographing people", d: "Especially at religious ceremonies and in rural areas.", icon: "📸", color: "var(--indigo-glow)" },
+    { t: "Greet with Namaste", d: "Press palms together at chest height — a respectful greeting everywhere in India.", icon: "🙏", color: "var(--gold)" },
+    { t: "Tipping is appreciated", d: "10% at restaurants, ₹50–100 for drivers and porters keeps service warm.", icon: "💰", color: "var(--sunset)" },
+    { t: "Sundays & festivals are busy", d: "Plan monument visits early — Indian families travel on weekends and holidays.", icon: "🎉", color: "var(--neon-cyan)" },
   ];
   return (
     <section className="relative mx-auto max-w-7xl px-6 py-24 md:px-12">
+      {/* floating decor */}
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute left-10 top-20 size-72 rounded-full opacity-20 blur-3xl animate-float" style={{ background: "var(--violet)" }} />
+        <div className="absolute right-10 bottom-10 size-72 rounded-full opacity-20 blur-3xl animate-float-slow" style={{ background: "var(--sunset)" }} />
+      </div>
+
       <Reveal>
-        <div className="mb-10">
+        <div className="mb-10 text-center">
           <span className="text-xs uppercase tracking-[0.3em] text-[var(--violet)]">Travel with respect</span>
-          <h2 className="mt-2 font-display text-4xl md:text-5xl">Cultural etiquette</h2>
+          <h2 className="mt-2 font-display text-4xl md:text-5xl">
+            Cultural <span className="gradient-aurora-text">etiquette</span>
+          </h2>
+          <p className="mx-auto mt-3 max-w-xl text-sm text-white/70">
+            Small gestures that earn big smiles across every state in India.
+          </p>
         </div>
       </Reveal>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 [perspective:1000px]">
         {items.map((it, i) => (
-          <Reveal key={it.t} delay={i * 50}>
-            <div className="glass-panel rounded-2xl p-5">
-              <div className="font-display text-base text-white">{it.t}</div>
-              <p className="mt-1 text-sm text-white/65">{it.d}</p>
+          <Reveal key={it.t} delay={i * 60}>
+            <div
+              className="glass-panel group relative overflow-hidden rounded-2xl p-6 transition-all duration-500 hover:-translate-y-2 hover:rotate-[0.5deg]"
+              style={{
+                animation: `tilt-in 0.9s cubic-bezier(0.16,1,0.3,1) ${i * 0.07}s both`,
+              }}
+            >
+              {/* radial color glow on hover */}
+              <div
+                className="pointer-events-none absolute -inset-1 opacity-0 transition-opacity duration-500 group-hover:opacity-100 blur-2xl"
+                style={{ background: `radial-gradient(circle at 30% 20%, ${it.color}, transparent 60%)` }}
+              />
+              <div className="card-shine" />
+              <div className="relative flex items-start gap-4">
+                <div
+                  className="grid size-12 shrink-0 place-items-center rounded-xl text-2xl transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110"
+                  style={{
+                    background: `color-mix(in oklab, ${it.color} 18%, transparent)`,
+                    boxShadow: `0 0 20px color-mix(in oklab, ${it.color} 40%, transparent)`,
+                  }}
+                >
+                  <span className="animate-float inline-block">{it.icon}</span>
+                </div>
+                <div>
+                  <div className="font-display text-base text-white transition-transform duration-500 group-hover:translate-x-0.5">
+                    {it.t}
+                  </div>
+                  <p className="mt-1 text-sm text-white/65">{it.d}</p>
+                </div>
+              </div>
+              <div
+                className="absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-700 group-hover:w-full"
+                style={{ background: `linear-gradient(90deg, ${it.color}, transparent)` }}
+              />
             </div>
           </Reveal>
         ))}
       </div>
+    </section>
+  );
+}
     </section>
   );
 }
