@@ -91,7 +91,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/__l5e/assets-v1/56ec74a2-9874-4f9f-9dcd-2a01acd2ea34/skyfly-favicon.png", type: "image/png" },
+      { rel: "apple-touch-icon", href: "/__l5e/assets-v1/56ec74a2-9874-4f9f-9dcd-2a01acd2ea34/skyfly-favicon.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
