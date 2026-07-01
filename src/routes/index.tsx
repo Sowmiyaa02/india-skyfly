@@ -385,7 +385,7 @@ function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.15_0.08_260/0.55)] via-[oklch(0.12_0.08_260/0.35)] to-[oklch(0.08_0.05_260/0.85)]" />
 
-      <div className="relative z-10 mx-auto flex min-h-[100vh] max-w-7xl flex-col gap-12 px-6 pt-24 pb-40 md:px-12">
+      <div className="relative z-10 mx-auto flex min-h-[100vh] max-w-7xl flex-col gap-8 px-4 pt-16 pb-32 sm:px-6 md:gap-12 md:px-12 md:pt-24 md:pb-40">
         {/* Top brand bar (not a nav) */}
         <Reveal>
           <div className="flex items-center justify-between">
