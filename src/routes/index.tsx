@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
+
 import indiaHero from "@/assets/india-hero.jpg";
 import placeTaj from "@/assets/place-taj.jpg";
 import placeGolden from "@/assets/place-golden.jpg";
@@ -89,7 +91,7 @@ function Reveal({
   return (
     <div
       ref={ref}
-      className={className}
+      className={cn(className)}
       style={{
         transition: "opacity 0.9s ease, transform 0.9s ease",
         transitionDelay: `${delay}ms`,
@@ -101,6 +103,7 @@ function Reveal({
     </div>
   );
 }
+
 
 /* ------------------------------------------------------------ */
 /* Data                                                         */
