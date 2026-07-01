@@ -420,15 +420,15 @@ function Hero() {
               </p>
               <div className="flex items-baseline gap-3 mb-1">
                 <span
-                  className="font-display text-2xl md:text-3xl text-white/90 animate-fade-up"
+                  className="font-display text-xl sm:text-2xl md:text-3xl text-white/90 animate-fade-up"
                   style={{ animationDelay: "0.1s" }}
                 >
                   Welcome to
                 </span>
-                <span className="animate-welcome-wave text-3xl md:text-4xl" aria-hidden>🙏</span>
+                <span className="animate-welcome-wave text-2xl sm:text-3xl md:text-4xl" aria-hidden>🙏</span>
               </div>
               <h1
-                className="font-display text-6xl leading-[0.95] md:text-8xl lg:text-[9rem] animate-gradient-pan bg-clip-text text-transparent"
+                className="font-display text-[3.5rem] leading-[0.95] sm:text-7xl md:text-8xl lg:text-[9rem] animate-gradient-pan bg-clip-text text-transparent"
                 style={{
                   backgroundImage:
                     "linear-gradient(90deg, #ffffff, var(--gold), var(--sunset), var(--neon-cyan), #ffffff)",
@@ -436,18 +436,19 @@ function Hero() {
               >
                 India
               </h1>
-              <p className="mt-6 max-w-xl text-base text-white/80 md:text-lg">
+              <p className="mt-5 max-w-xl text-sm text-white/80 sm:text-base md:mt-6 md:text-lg">
                 A subcontinent of 5,000-year-old temples, royal palaces, snow Himalayas and tropical
                 backwaters. We guide international visitors from visa stamp to safe return — every
                 hotel, every transfer, every local story.
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-3 text-xs text-white/70">
+              <div className="mt-6 flex flex-wrap gap-2 text-[11px] text-white/70 sm:text-xs md:mt-8 md:gap-3">
                 <Pill>UNESCO sites · 43</Pill>
                 <Pill>States & UTs · 28 + 8</Pill>
                 <Pill>Languages · 22 official</Pill>
                 <Pill>Best season · Oct – Mar</Pill>
               </div>
+
             </div>
           </Reveal>
 
