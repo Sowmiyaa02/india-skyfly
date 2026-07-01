@@ -868,7 +868,7 @@ function Itinerary() {
 
       <Reveal>
         <div className="glass-panel overflow-hidden rounded-2xl">
-          <div className="grid grid-cols-12 border-b border-white/10 px-6 py-4 text-[10px] uppercase tracking-widest text-white/50">
+          <div className="hidden grid-cols-12 border-b border-white/10 px-6 py-4 text-[10px] uppercase tracking-widest text-white/50 sm:grid">
             <div className="col-span-2">Day</div>
             <div className="col-span-3">City</div>
             <div className="col-span-7">Approximate plan</div>
@@ -876,14 +876,16 @@ function Itinerary() {
           {SAMPLE_ITINERARY.map((row, i) => (
             <div
               key={row.day}
-              className={`group grid grid-cols-12 items-center gap-2 px-6 py-5 text-sm text-white/85 transition-all hover:bg-white/5 hover:translate-x-1 ${
+              className={`group flex flex-col gap-2 px-5 py-5 text-sm text-white/85 transition-all hover:bg-white/5 sm:grid sm:grid-cols-12 sm:items-center sm:gap-2 sm:px-6 sm:hover:translate-x-1 ${
                 i !== SAMPLE_ITINERARY.length - 1 ? "border-b border-white/5" : ""
               }`}
               style={{ animation: `fade-up 0.7s cubic-bezier(0.16,1,0.3,1) ${i * 0.08}s both` }}
             >
-              <div className="col-span-2 font-display text-base text-[var(--gold)] transition-transform group-hover:scale-110">{row.day}</div>
-              <div className="col-span-3 text-white">{row.city}</div>
-              <div className="col-span-7 text-white/75">{row.plan}</div>
+              <div className="flex items-baseline gap-3 sm:contents">
+                <div className="font-display text-base text-[var(--gold)] transition-transform group-hover:scale-110 sm:col-span-2">{row.day}</div>
+                <div className="text-white sm:col-span-3">{row.city}</div>
+              </div>
+              <div className="text-white/75 sm:col-span-7">{row.plan}</div>
             </div>
           ))}
         </div>
@@ -891,6 +893,7 @@ function Itinerary() {
           * Sample only. Day-by-day plans, exact pickup times and hotel categories are confirmed after consultation.
         </p>
       </Reveal>
+
     </section>
   );
 }
