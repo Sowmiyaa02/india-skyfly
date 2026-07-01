@@ -1022,7 +1022,7 @@ function Faq() {
 function About() {
   return (
     <section id="about" className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 md:px-12 md:py-24">
-      <div className="glass-panel grid grid-cols-1 gap-8 rounded-3xl p-10 md:grid-cols-2">
+      <div className="glass-panel grid grid-cols-1 gap-8 rounded-3xl p-6 sm:p-8 md:grid-cols-2 md:p-10">
         <Reveal>
           <div>
             <span className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]">About us</span>
