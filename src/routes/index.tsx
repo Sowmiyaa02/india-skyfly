@@ -65,7 +65,15 @@ function ScrollProgress() {
   );
 }
 
-function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+function Reveal({
+  children,
+  delay = 0,
+  className = "",
+}: {
+  children: React.ReactNode;
+  delay?: number;
+  className?: string;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const [shown, setShown] = useState(false);
   useEffect(() => {
@@ -81,6 +89,7 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
   return (
     <div
       ref={ref}
+      className={className}
       style={{
         transition: "opacity 0.9s ease, transform 0.9s ease",
         transitionDelay: `${delay}ms`,
@@ -399,9 +408,9 @@ function Hero() {
         </Reveal>
 
         {/* Main hero grid */}
-        <div className="grid flex-1 grid-cols-1 items-end gap-10 lg:grid-cols-12">
-          <Reveal>
-            <div className="lg:col-span-7">
+        <div className="grid flex-1 grid-cols-1 items-end gap-10 md:grid-cols-12">
+          <Reveal className="md:col-span-7">
+            <div>
               <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs text-white/80 backdrop-blur">
                 <span className="size-1.5 rounded-full bg-[var(--gold)] animate-pulse" />
                 Tourist visa · guidance · sightseeing — fully arranged
@@ -416,7 +425,7 @@ function Hero() {
                 <span className="animate-welcome-wave text-3xl md:text-4xl" aria-hidden>🙏</span>
               </div>
               <h1
-                className="font-display text-6xl leading-[0.95] md:text-8xl lg:text-[10rem] animate-gradient-pan bg-clip-text text-transparent"
+                className="font-display text-6xl leading-[0.95] md:text-8xl lg:text-[9rem] animate-gradient-pan bg-clip-text text-transparent"
                 style={{
                   backgroundImage:
                     "linear-gradient(90deg, #ffffff, var(--gold), var(--sunset), var(--neon-cyan), #ffffff)",
@@ -440,8 +449,8 @@ function Hero() {
           </Reveal>
 
           {/* Featured place cards (reference image style) */}
-          <Reveal delay={150}>
-            <div className="flex gap-4 lg:col-span-5 lg:justify-end">
+          <Reveal delay={150} className="md:col-span-5">
+            <div className="flex gap-4 md:justify-end">
               <FeatureCard
                 title="Amritsar Golden Temple"
                 rating="4.9 / 5"
