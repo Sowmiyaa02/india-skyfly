@@ -385,7 +385,7 @@ function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.15_0.08_260/0.55)] via-[oklch(0.12_0.08_260/0.35)] to-[oklch(0.08_0.05_260/0.85)]" />
 
-      <div className="relative z-10 mx-auto flex min-h-[100vh] max-w-7xl flex-col gap-12 px-6 pt-24 pb-40 md:px-12">
+      <div className="relative z-10 mx-auto flex min-h-[100vh] max-w-7xl flex-col gap-8 px-4 pt-16 pb-32 sm:px-6 md:gap-12 md:px-12 md:pt-24 md:pb-40">
         {/* Top brand bar (not a nav) */}
         <Reveal>
           <div className="flex items-center justify-between">
@@ -420,15 +420,15 @@ function Hero() {
               </p>
               <div className="flex items-baseline gap-3 mb-1">
                 <span
-                  className="font-display text-2xl md:text-3xl text-white/90 animate-fade-up"
+                  className="font-display text-xl sm:text-2xl md:text-3xl text-white/90 animate-fade-up"
                   style={{ animationDelay: "0.1s" }}
                 >
                   Welcome to
                 </span>
-                <span className="animate-welcome-wave text-3xl md:text-4xl" aria-hidden>🙏</span>
+                <span className="animate-welcome-wave text-2xl sm:text-3xl md:text-4xl" aria-hidden>🙏</span>
               </div>
               <h1
-                className="font-display text-6xl leading-[0.95] md:text-8xl lg:text-[9rem] animate-gradient-pan bg-clip-text text-transparent"
+                className="font-display text-[3.5rem] leading-[0.95] sm:text-7xl md:text-8xl lg:text-[9rem] animate-gradient-pan bg-clip-text text-transparent"
                 style={{
                   backgroundImage:
                     "linear-gradient(90deg, #ffffff, var(--gold), var(--sunset), var(--neon-cyan), #ffffff)",
@@ -436,24 +436,25 @@ function Hero() {
               >
                 India
               </h1>
-              <p className="mt-6 max-w-xl text-base text-white/80 md:text-lg">
+              <p className="mt-5 max-w-xl text-sm text-white/80 sm:text-base md:mt-6 md:text-lg">
                 A subcontinent of 5,000-year-old temples, royal palaces, snow Himalayas and tropical
                 backwaters. We guide international visitors from visa stamp to safe return — every
                 hotel, every transfer, every local story.
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-3 text-xs text-white/70">
+              <div className="mt-6 flex flex-wrap gap-2 text-[11px] text-white/70 sm:text-xs md:mt-8 md:gap-3">
                 <Pill>UNESCO sites · 43</Pill>
                 <Pill>States & UTs · 28 + 8</Pill>
                 <Pill>Languages · 22 official</Pill>
                 <Pill>Best season · Oct – Mar</Pill>
               </div>
+
             </div>
           </Reveal>
 
           {/* Featured place cards (reference image style) */}
           <Reveal delay={150} className="md:col-span-5">
-            <div className="flex gap-4 md:justify-end">
+            <div className="flex gap-3 sm:gap-4 md:justify-end">
               <FeatureCard
                 title="Amritsar Golden Temple"
                 rating="4.9 / 5"
@@ -467,6 +468,7 @@ function Hero() {
               />
             </div>
           </Reveal>
+
         </div>
 
         {/* Slide indicator */}
@@ -502,8 +504,9 @@ function FeatureCard({
   return (
     <div
       className={`group relative overflow-hidden rounded-2xl border border-white/20 shadow-2xl transition-transform hover:-translate-y-1 ${
-        tall ? "h-64 w-44 md:h-80 md:w-56" : "h-56 w-36 md:h-64 md:w-44"
+        tall ? "h-56 w-36 sm:h-64 sm:w-44 md:h-80 md:w-56" : "h-48 w-28 sm:h-56 sm:w-36 md:h-64 md:w-44"
       }`}
+
     >
       <img src={img} alt={title} width={400} height={600} loading="lazy" className="size-full object-cover transition-transform duration-700 group-hover:scale-110" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent" />
@@ -521,7 +524,7 @@ function FeatureCard({
 function Places() {
   const [open, setOpen] = useState<number | null>(null);
   return (
-    <section id="places" className="relative mx-auto max-w-7xl px-6 py-24 md:px-12">
+    <section id="places" className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 md:px-12 md:py-24">
       <Reveal>
         <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
@@ -609,7 +612,7 @@ function PlaceCard({
         transformStyle: "preserve-3d",
         willChange: "transform",
       }}
-      className={`group relative h-80 w-full overflow-hidden rounded-2xl border border-white/10 text-left shadow-xl hover:shadow-[0_30px_80px_-20px_oklch(0_0_0/0.7),0_0_60px_-10px_color-mix(in_oklab,var(--neon-cyan)_40%,transparent)] ${
+      className={`group relative h-64 w-full overflow-hidden sm:h-80 rounded-2xl border border-white/10 text-left shadow-xl hover:shadow-[0_30px_80px_-20px_oklch(0_0_0/0.7),0_0_60px_-10px_color-mix(in_oklab,var(--neon-cyan)_40%,transparent)] ${
         shown ? "animate-card-rise" : "opacity-0"
       }`}
     >
@@ -768,7 +771,7 @@ function InfoBlock({ label, children }: { label: string; children: React.ReactNo
 /* ------------------------------------------------------------ */
 function Journey() {
   return (
-    <section id="guide" className="relative mx-auto max-w-7xl px-6 py-24 md:px-12">
+    <section id="guide" className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 md:px-12 md:py-24">
       {/* animated decor */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div
@@ -802,7 +805,7 @@ function Journey() {
           {JOURNEY.map((j, i) => (
             <Reveal key={j.n} delay={i * 80}>
               <div
-                className="glass-panel group relative flex gap-5 overflow-hidden rounded-2xl p-6 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02]"
+                className="glass-panel group relative flex gap-4 overflow-hidden rounded-2xl p-5 sm:gap-5 sm:p-6 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02]"
                 style={{ animationDelay: `${i * 0.2}s` }}
               >
                 {/* rotating gradient border on hover */}
@@ -847,7 +850,7 @@ function Journey() {
 /* ------------------------------------------------------------ */
 function Itinerary() {
   return (
-    <section id="itinerary" className="relative mx-auto max-w-7xl px-6 py-24 md:px-12">
+    <section id="itinerary" className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 md:px-12 md:py-24">
       <Reveal>
         <div className="mb-12">
           <span className="text-xs uppercase tracking-[0.3em] text-[var(--electric)]">Example timetable</span>
@@ -865,7 +868,7 @@ function Itinerary() {
 
       <Reveal>
         <div className="glass-panel overflow-hidden rounded-2xl">
-          <div className="grid grid-cols-12 border-b border-white/10 px-6 py-4 text-[10px] uppercase tracking-widest text-white/50">
+          <div className="hidden grid-cols-12 border-b border-white/10 px-6 py-4 text-[10px] uppercase tracking-widest text-white/50 sm:grid">
             <div className="col-span-2">Day</div>
             <div className="col-span-3">City</div>
             <div className="col-span-7">Approximate plan</div>
@@ -873,14 +876,16 @@ function Itinerary() {
           {SAMPLE_ITINERARY.map((row, i) => (
             <div
               key={row.day}
-              className={`group grid grid-cols-12 items-center gap-2 px-6 py-5 text-sm text-white/85 transition-all hover:bg-white/5 hover:translate-x-1 ${
+              className={`group flex flex-col gap-2 px-5 py-5 text-sm text-white/85 transition-all hover:bg-white/5 sm:grid sm:grid-cols-12 sm:items-center sm:gap-2 sm:px-6 sm:hover:translate-x-1 ${
                 i !== SAMPLE_ITINERARY.length - 1 ? "border-b border-white/5" : ""
               }`}
               style={{ animation: `fade-up 0.7s cubic-bezier(0.16,1,0.3,1) ${i * 0.08}s both` }}
             >
-              <div className="col-span-2 font-display text-base text-[var(--gold)] transition-transform group-hover:scale-110">{row.day}</div>
-              <div className="col-span-3 text-white">{row.city}</div>
-              <div className="col-span-7 text-white/75">{row.plan}</div>
+              <div className="flex items-baseline gap-3 sm:contents">
+                <div className="font-display text-base text-[var(--gold)] transition-transform group-hover:scale-110 sm:col-span-2">{row.day}</div>
+                <div className="text-white sm:col-span-3">{row.city}</div>
+              </div>
+              <div className="text-white/75 sm:col-span-7">{row.plan}</div>
             </div>
           ))}
         </div>
@@ -888,6 +893,7 @@ function Itinerary() {
           * Sample only. Day-by-day plans, exact pickup times and hotel categories are confirmed after consultation.
         </p>
       </Reveal>
+
     </section>
   );
 }
@@ -908,7 +914,7 @@ function Etiquette() {
     { t: "Sundays & festivals are busy", d: "Plan monument visits early — Indian families travel on weekends and holidays.", icon: "🎉", color: "var(--neon-cyan)" },
   ];
   return (
-    <section className="relative mx-auto max-w-7xl px-6 py-24 md:px-12">
+    <section className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 md:px-12 md:py-24">
       {/* floating decor */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute left-10 top-20 size-72 rounded-full opacity-20 blur-3xl animate-float" style={{ background: "var(--violet)" }} />
@@ -930,7 +936,7 @@ function Etiquette() {
         {items.map((it, i) => (
           <Reveal key={it.t} delay={i * 60}>
             <div
-              className="glass-panel group relative overflow-hidden rounded-2xl p-6 transition-all duration-500 hover:-translate-y-2 hover:rotate-[0.5deg]"
+              className="glass-panel group relative overflow-hidden rounded-2xl p-5 sm:p-6 transition-all duration-500 hover:-translate-y-2 hover:rotate-[0.5deg]"
               style={{
                 animation: `tilt-in 0.9s cubic-bezier(0.16,1,0.3,1) ${i * 0.07}s both`,
               }}
@@ -976,7 +982,7 @@ function Etiquette() {
 function Faq() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section className="relative mx-auto max-w-4xl px-6 py-24 md:px-12">
+    <section className="relative mx-auto max-w-4xl px-4 py-14 sm:px-6 md:px-12 md:py-24">
       <Reveal>
         <div className="mb-10 text-center">
           <span className="text-xs uppercase tracking-[0.3em] text-[var(--neon-cyan)]">Visitor questions</span>
@@ -988,7 +994,7 @@ function Faq() {
           <Reveal key={f.q} delay={i * 40}>
             <button
               onClick={() => setOpen(open === i ? null : i)}
-              className="glass-panel w-full rounded-2xl p-5 text-left"
+              className="glass-panel w-full rounded-2xl p-4 sm:p-5 text-left"
             >
               <div className="flex items-center justify-between gap-4">
                 <span className="font-medium text-white">{f.q}</span>
@@ -1015,8 +1021,8 @@ function Faq() {
 /* ------------------------------------------------------------ */
 function About() {
   return (
-    <section id="about" className="relative mx-auto max-w-7xl px-6 py-24 md:px-12">
-      <div className="glass-panel grid grid-cols-1 gap-8 rounded-3xl p-10 md:grid-cols-2">
+    <section id="about" className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 md:px-12 md:py-24">
+      <div className="glass-panel grid grid-cols-1 gap-8 rounded-3xl p-6 sm:p-8 md:grid-cols-2 md:p-10">
         <Reveal>
           <div>
             <span className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]">About us</span>
@@ -1060,7 +1066,7 @@ function Stat({ n, l }: { n: string; l: string }) {
 /* ------------------------------------------------------------ */
 function Contact() {
   return (
-    <section id="contact" className="relative mx-auto max-w-7xl px-6 py-24 md:px-12">
+    <section id="contact" className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 md:px-12 md:py-24">
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
         <Reveal>
           <div>
@@ -1086,7 +1092,7 @@ function Contact() {
               e.preventDefault();
               alert("Thank you! Our team will reach out within 24 hours.");
             }}
-            className="glass-panel space-y-4 rounded-3xl p-7"
+            className="glass-panel space-y-4 rounded-3xl p-5 sm:p-7"
           >
             <Input label="Full name" placeholder="Your name" />
             <Input label="Email" type="email" placeholder="you@example.com" />
@@ -1131,7 +1137,7 @@ function Input({ label, ...rest }: { label: string } & React.InputHTMLAttributes
 function ContactRow({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="flex gap-4">
-      <div className="w-32 shrink-0 text-[10px] uppercase tracking-widest text-white/50">{label}</div>
+      <div className="w-24 shrink-0 text-[10px] sm:w-32 uppercase tracking-widest text-white/50">{label}</div>
       <div className="text-white/85">{children}</div>
     </div>
   );
