@@ -409,7 +409,7 @@ function Hero() {
 
         {/* Main hero grid */}
         <div className="grid flex-1 grid-cols-1 items-end gap-10 md:grid-cols-12">
-          <Reveal className="lg:col-span-7">
+          <Reveal className="md:col-span-7">
             <div>
               <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs text-white/80 backdrop-blur">
                 <span className="size-1.5 rounded-full bg-[var(--gold)] animate-pulse" />
@@ -449,8 +449,8 @@ function Hero() {
           </Reveal>
 
           {/* Featured place cards (reference image style) */}
-          <Reveal delay={150} className="lg:col-span-5">
-            <div className="flex gap-4 lg:justify-end">
+          <Reveal delay={150} className="md:col-span-5">
+            <div className="flex gap-4 md:justify-end">
               <FeatureCard
                 title="Amritsar Golden Temple"
                 rating="4.9 / 5"
