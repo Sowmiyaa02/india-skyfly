@@ -408,7 +408,7 @@ function Hero() {
         </Reveal>
 
         {/* Main hero grid */}
-        <div className="grid flex-1 grid-cols-1 items-end gap-10 lg:grid-cols-12">
+        <div className="grid flex-1 grid-cols-1 items-end gap-10 md:grid-cols-12">
           <Reveal className="lg:col-span-7">
             <div>
               <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs text-white/80 backdrop-blur">
