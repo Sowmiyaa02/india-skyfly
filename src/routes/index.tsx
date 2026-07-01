@@ -504,8 +504,9 @@ function FeatureCard({
   return (
     <div
       className={`group relative overflow-hidden rounded-2xl border border-white/20 shadow-2xl transition-transform hover:-translate-y-1 ${
-        tall ? "h-64 w-44 md:h-80 md:w-56" : "h-56 w-36 md:h-64 md:w-44"
+        tall ? "h-56 w-36 sm:h-64 sm:w-44 md:h-80 md:w-56" : "h-48 w-28 sm:h-56 sm:w-36 md:h-64 md:w-44"
       }`}
+
     >
       <img src={img} alt={title} width={400} height={600} loading="lazy" className="size-full object-cover transition-transform duration-700 group-hover:scale-110" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent" />
