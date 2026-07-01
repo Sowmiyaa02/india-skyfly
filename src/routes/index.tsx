@@ -1092,7 +1092,7 @@ function Contact() {
               e.preventDefault();
               alert("Thank you! Our team will reach out within 24 hours.");
             }}
-            className="glass-panel space-y-4 rounded-3xl p-7"
+            className="glass-panel space-y-4 rounded-3xl p-5 sm:p-7"
           >
             <Input label="Full name" placeholder="Your name" />
             <Input label="Email" type="email" placeholder="you@example.com" />
@@ -1137,7 +1137,7 @@ function Input({ label, ...rest }: { label: string } & React.InputHTMLAttributes
 function ContactRow({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="flex gap-4">
-      <div className="w-32 shrink-0 text-[10px] uppercase tracking-widest text-white/50">{label}</div>
+      <div className="w-24 shrink-0 text-[10px] sm:w-32 uppercase tracking-widest text-white/50">{label}</div>
       <div className="text-white/85">{children}</div>
     </div>
   );
