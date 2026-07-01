@@ -65,7 +65,15 @@ function ScrollProgress() {
   );
 }
 
-function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+function Reveal({
+  children,
+  delay = 0,
+  className = "",
+}: {
+  children: React.ReactNode;
+  delay?: number;
+  className?: string;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const [shown, setShown] = useState(false);
   useEffect(() => {
@@ -81,6 +89,7 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
   return (
     <div
       ref={ref}
+      className={className}
       style={{
         transition: "opacity 0.9s ease, transform 0.9s ease",
         transitionDelay: `${delay}ms`,
