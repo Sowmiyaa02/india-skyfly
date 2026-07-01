@@ -612,7 +612,7 @@ function PlaceCard({
         transformStyle: "preserve-3d",
         willChange: "transform",
       }}
-      className={`group relative h-80 w-full overflow-hidden rounded-2xl border border-white/10 text-left shadow-xl hover:shadow-[0_30px_80px_-20px_oklch(0_0_0/0.7),0_0_60px_-10px_color-mix(in_oklab,var(--neon-cyan)_40%,transparent)] ${
+      className={`group relative h-64 w-full overflow-hidden sm:h-80 rounded-2xl border border-white/10 text-left shadow-xl hover:shadow-[0_30px_80px_-20px_oklch(0_0_0/0.7),0_0_60px_-10px_color-mix(in_oklab,var(--neon-cyan)_40%,transparent)] ${
         shown ? "animate-card-rise" : "opacity-0"
       }`}
     >
@@ -805,7 +805,7 @@ function Journey() {
           {JOURNEY.map((j, i) => (
             <Reveal key={j.n} delay={i * 80}>
               <div
-                className="glass-panel group relative flex gap-5 overflow-hidden rounded-2xl p-6 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02]"
+                className="glass-panel group relative flex gap-4 overflow-hidden rounded-2xl p-5 sm:gap-5 sm:p-6 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02]"
                 style={{ animationDelay: `${i * 0.2}s` }}
               >
                 {/* rotating gradient border on hover */}
@@ -936,7 +936,7 @@ function Etiquette() {
         {items.map((it, i) => (
           <Reveal key={it.t} delay={i * 60}>
             <div
-              className="glass-panel group relative overflow-hidden rounded-2xl p-6 transition-all duration-500 hover:-translate-y-2 hover:rotate-[0.5deg]"
+              className="glass-panel group relative overflow-hidden rounded-2xl p-5 sm:p-6 transition-all duration-500 hover:-translate-y-2 hover:rotate-[0.5deg]"
               style={{
                 animation: `tilt-in 0.9s cubic-bezier(0.16,1,0.3,1) ${i * 0.07}s both`,
               }}
@@ -994,7 +994,7 @@ function Faq() {
           <Reveal key={f.q} delay={i * 40}>
             <button
               onClick={() => setOpen(open === i ? null : i)}
-              className="glass-panel w-full rounded-2xl p-5 text-left"
+              className="glass-panel w-full rounded-2xl p-4 sm:p-5 text-left"
             >
               <div className="flex items-center justify-between gap-4">
                 <span className="font-medium text-white">{f.q}</span>
