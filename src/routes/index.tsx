@@ -454,7 +454,7 @@ function Hero() {
 
           {/* Featured place cards (reference image style) */}
           <Reveal delay={150} className="md:col-span-5">
-            <div className="flex gap-4 md:justify-end">
+            <div className="flex gap-3 sm:gap-4 md:justify-end">
               <FeatureCard
                 title="Amritsar Golden Temple"
                 rating="4.9 / 5"
@@ -468,6 +468,7 @@ function Hero() {
               />
             </div>
           </Reveal>
+
         </div>
 
         {/* Slide indicator */}
