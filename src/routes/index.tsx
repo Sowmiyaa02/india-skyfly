@@ -91,7 +91,7 @@ function Reveal({
   return (
     <div
       ref={ref}
-      className={className}
+      className={cn(className)}
       style={{
         transition: "opacity 0.9s ease, transform 0.9s ease",
         transitionDelay: `${delay}ms`,
@@ -103,6 +103,7 @@ function Reveal({
     </div>
   );
 }
+
 
 /* ------------------------------------------------------------ */
 /* Data                                                         */
