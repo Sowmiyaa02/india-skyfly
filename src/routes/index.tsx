@@ -524,7 +524,7 @@ function FeatureCard({
 function Places() {
   const [open, setOpen] = useState<number | null>(null);
   return (
-    <section id="places" className="relative mx-auto max-w-7xl px-6 py-24 md:px-12">
+    <section id="places" className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 md:px-12 md:py-24">
       <Reveal>
         <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
@@ -771,7 +771,7 @@ function InfoBlock({ label, children }: { label: string; children: React.ReactNo
 /* ------------------------------------------------------------ */
 function Journey() {
   return (
-    <section id="guide" className="relative mx-auto max-w-7xl px-6 py-24 md:px-12">
+    <section id="guide" className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 md:px-12 md:py-24">
       {/* animated decor */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div
@@ -850,7 +850,7 @@ function Journey() {
 /* ------------------------------------------------------------ */
 function Itinerary() {
   return (
-    <section id="itinerary" className="relative mx-auto max-w-7xl px-6 py-24 md:px-12">
+    <section id="itinerary" className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 md:px-12 md:py-24">
       <Reveal>
         <div className="mb-12">
           <span className="text-xs uppercase tracking-[0.3em] text-[var(--electric)]">Example timetable</span>
@@ -911,7 +911,7 @@ function Etiquette() {
     { t: "Sundays & festivals are busy", d: "Plan monument visits early — Indian families travel on weekends and holidays.", icon: "🎉", color: "var(--neon-cyan)" },
   ];
   return (
-    <section className="relative mx-auto max-w-7xl px-6 py-24 md:px-12">
+    <section className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 md:px-12 md:py-24">
       {/* floating decor */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute left-10 top-20 size-72 rounded-full opacity-20 blur-3xl animate-float" style={{ background: "var(--violet)" }} />
@@ -979,7 +979,7 @@ function Etiquette() {
 function Faq() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section className="relative mx-auto max-w-4xl px-6 py-24 md:px-12">
+    <section className="relative mx-auto max-w-4xl px-4 py-14 sm:px-6 md:px-12 md:py-24">
       <Reveal>
         <div className="mb-10 text-center">
           <span className="text-xs uppercase tracking-[0.3em] text-[var(--neon-cyan)]">Visitor questions</span>
@@ -1018,7 +1018,7 @@ function Faq() {
 /* ------------------------------------------------------------ */
 function About() {
   return (
-    <section id="about" className="relative mx-auto max-w-7xl px-6 py-24 md:px-12">
+    <section id="about" className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 md:px-12 md:py-24">
       <div className="glass-panel grid grid-cols-1 gap-8 rounded-3xl p-10 md:grid-cols-2">
         <Reveal>
           <div>
@@ -1063,7 +1063,7 @@ function Stat({ n, l }: { n: string; l: string }) {
 /* ------------------------------------------------------------ */
 function Contact() {
   return (
-    <section id="contact" className="relative mx-auto max-w-7xl px-6 py-24 md:px-12">
+    <section id="contact" className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 md:px-12 md:py-24">
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
         <Reveal>
           <div>
