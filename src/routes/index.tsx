@@ -81,12 +81,38 @@ function Reveal({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    // Safety: reduced motion or no IO support → show immediately
+    if (
+      typeof window === "undefined" ||
+      typeof IntersectionObserver === "undefined" ||
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches
+    ) {
+      setShown(true);
+      return;
+    }
+    // If already in / above viewport on mount (fast scroll, refresh mid-page), show now
+    const rect = el.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.top < vh && rect.bottom > 0) {
+      setShown(true);
+      return;
+    }
     const io = new IntersectionObserver(
-      ([e]) => e.isIntersecting && setShown(true),
-      { threshold: 0.15 }
+      ([e]) => {
+        if (e.isIntersecting) {
+          setShown(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.01, rootMargin: "0px 0px -5% 0px" }
     );
     io.observe(el);
-    return () => io.disconnect();
+    // Fallback: never leave content invisible
+    const t = window.setTimeout(() => setShown(true), 1500);
+    return () => {
+      io.disconnect();
+      window.clearTimeout(t);
+    };
   }, []);
   return (
     <div
